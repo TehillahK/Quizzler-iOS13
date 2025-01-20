@@ -25,12 +25,15 @@ class ViewController: UIViewController {
 
     @IBAction func answerGiven(_ sender: UIButton) {
         
-        // if question is correct
+        
         let isCorrect = quizLogic.isQuestionCorrect((sender.titleLabel?.text!)!)
         
+        // is the answer user provided correct
         if(isCorrect){
+            // if its correct button becomes green
             sender.backgroundColor = UIColor.green
         }else{
+            // if its wrong button becomes red
             sender.backgroundColor = UIColor.red
         }
         
