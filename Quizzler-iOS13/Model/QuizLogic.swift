@@ -26,12 +26,20 @@ struct QuizLogic{
     
     var questionNumber = 0
     
+    var score = 0
+    
     func getCurrentQuestion() -> String{
         return questions[questionNumber].question
     }
     
-    func isQuestionCorrect(_ userAnswer: String) -> Bool {
-        return questions[questionNumber].answer == userAnswer
+    mutating func isQuestionCorrect(_ userAnswer: String) -> Bool {
+        let result = questions[questionNumber].answer == userAnswer
+        
+        if (result){
+            self.score += 1
+        }
+        
+        return result
     }
     
     mutating func nextQuestion() {
