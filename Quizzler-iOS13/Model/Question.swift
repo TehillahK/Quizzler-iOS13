@@ -8,11 +8,18 @@
 
 struct Question{
     var question: String
+    var optionA: String
+    var optionB: String
+    var optionC: String
     var answer: String
     
-    init(q: String, a: String) {
-        self.question = q
-        self.answer = a
+    
+    init(q: String,op1: String,op2: String,op3: String, a: String) {
+        question = q
+        optionA = op1
+        optionB = op2
+        optionC = op3
+        answer = a
     }
     
     
