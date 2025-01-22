@@ -60,6 +60,9 @@ class ViewController: UIViewController {
     
     func updateUI() {
         
+        let progressVal = quizLogic.percentageProgress()
+        print(progressVal)
+        
         scoreLabel.text = "Score:\(quizLogic.score)"
         
         // go to next Question
@@ -75,7 +78,7 @@ class ViewController: UIViewController {
         optionC.setTitle(currentQuestion.options[2], for: UIControl.State.normal)
         
         //update progressbar
-        progressBar.progress += quizLogic.percentageProgress()
+        progressBar.progress = progressVal
     
         
     }

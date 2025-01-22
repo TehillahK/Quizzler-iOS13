@@ -22,7 +22,7 @@ struct QuizLogic{
 
     ]
     
-    var questionNumber = 0
+    var questionNumber = 1
     
     var score = 0
     
@@ -49,7 +49,7 @@ struct QuizLogic{
     
     func percentageProgress() -> Float {
         
-        return Float(questionNumber)/Float(questions.count)
+        return Float(questionNumber)/Float(questions.count - 1)
     }
     
     
