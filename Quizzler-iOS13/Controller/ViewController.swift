@@ -64,9 +64,15 @@ class ViewController: UIViewController {
         
         // go to next Question
         quizLogic.nextQuestion()
+        let currentQuestion = quizLogic.getCurrentQuestion()
         
         // get the new Question
-        questionLabel.text = quizLogic.getCurrentQuestion().question
+        questionLabel.text = currentQuestion.question
+        
+        // update multiple choice answers
+        optionA.setTitle(currentQuestion.options[0], for: UIControl.State.normal)
+        optionB.setTitle(currentQuestion.options[1], for: UIControl.State.normal)
+        optionC.setTitle(currentQuestion.options[2], for: UIControl.State.normal)
         
         //update progressbar
         progressBar.progress += quizLogic.percentageProgress()
