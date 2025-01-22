@@ -21,7 +21,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        questionLabel.text = quizLogic.getCurrentQuestion()
+        let firstQuestion = quizLogic.getCurrentQuestion()
+        
+        questionLabel.text = firstQuestion.question
+        optionA.setTitle(firstQuestion.options[0], for: UIControl.State.normal)
+        optionB.setTitle(firstQuestion.options[1], for: UIControl.State.normal)
+        optionC.setTitle(firstQuestion.options[2], for: UIControl.State.normal)
+        
         progressBar.progress = 0.0
         scoreLabel.text = "Score:\(quizLogic.score)"
     }
@@ -60,7 +66,7 @@ class ViewController: UIViewController {
         quizLogic.nextQuestion()
         
         // get the new Question
-        questionLabel.text = quizLogic.getCurrentQuestion()
+        questionLabel.text = quizLogic.getCurrentQuestion().question
         
         //update progressbar
         progressBar.progress += quizLogic.percentageProgress()
